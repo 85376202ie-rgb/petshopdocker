@@ -1,0 +1,19 @@
+Projeto 1 — Pet Shop Agenda
+============================
+
+O código da aplicação (frontend e backend) já está pronto e funcional.
+
+Faltam DE PROPÓSITO:
+  - frontend/Dockerfile
+  - backend/Dockerfile
+  - docker-compose.yml
+
+Siga o "Guia de Desafios — Docker Compose" (documento entregue junto).
+São os MESMOS passos e comandos de Lista de Recados e Biblioteca — só
+muda o nome do projeto, da rede, do volume e as portas.
+
+Rede: rede-petshop | Volume: dados_petshop | Banco: petshop
+Frontend: http://localhost:8082 | Backend: porta 3002
+
+Quando terminarem, enviem a pasta inteira (com os arquivos que vocês
+criaram) para o professor rodar.

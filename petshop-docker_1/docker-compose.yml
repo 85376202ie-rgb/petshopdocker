@@ -1,0 +1,38 @@
+services:
+ 
+  front:
+    build: ./frontend
+    container_name: front-petshop
+    ports:
+      - "8081:80"
+    networks:
+      - rede-petshop1
+
+  back:
+    build: ./backend
+    container_name: back-petshop
+    ports:
+      - "3001:3000"
+    networks:
+      - rede-petshop1
+    depends_on:
+      - banco
+  banco:
+    image: mysql:8.0
+    container_name: banco-petshop
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: petshop
+    volumes:
+      - dados_petshop1:/var/lib/mysql
+      - ./banco/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - rede-petshop1
+ 
+networks:
+ 
+  rede-petshop1:
+ 
+volumes:
+ 
+  dados_petshop1:
